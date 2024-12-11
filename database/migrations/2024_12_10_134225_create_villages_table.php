@@ -17,7 +17,8 @@ return new class extends Migration
             $table->foreignId('district_id')
                   ->constrained('districts')
                   ->onDelete('cascade');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

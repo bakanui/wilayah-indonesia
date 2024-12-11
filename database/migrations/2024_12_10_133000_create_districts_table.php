@@ -17,7 +17,8 @@ return new class extends Migration
             $table->foreignId('regency_id')
                   ->constrained('regencies')
                   ->onDelete('cascade');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('villages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('district_id')
+            $table->foreignId('id_kecamatan')
                   ->constrained('districts')
                   ->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();

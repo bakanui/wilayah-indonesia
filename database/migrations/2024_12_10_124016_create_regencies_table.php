@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('regencies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('province_id')
+            $table->foreignId('id_provinsi')
                   ->constrained('provinces')
                   ->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();

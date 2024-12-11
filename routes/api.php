@@ -10,4 +10,5 @@ Route::get('/user', function (Request $request) {
 
 Route::controller(WilayahController::class)->group(function () {
     Route::get('provinsi', 'getProvinces');
+    Route::get('kota', 'getRegencies');
 });
